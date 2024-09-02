@@ -250,9 +250,7 @@ class Car {
       );
       this.state = CarState.Moving;
       this.sound.osc.amp(p.map(this.settings.volume, 0, 10, 0, 0.6), 0.02);
-      console.log(
-        `Car ${this.carNumber} moving to ${nextDest} of ${this.destFloors}`
-      );
+
       this.lastMoveTime = p.millis() / 1000;
       this.speed = 0;
       this.maxMaxSpeed = 1000;
@@ -335,7 +333,6 @@ class Car {
       if (!this.destFloors.find((f) => f === floor)) {
         this.destFloors.push(floor);
         this.sortDestinations();
-        console.log(`Car ${this.carNumber} will go to ${floor}`);
       }
     }
   }
@@ -1131,7 +1128,6 @@ class Talker {
         : this.randChoice(
             this.settings.speakersType === 1 ? this.voices : this.englishVoices
           );
-      console.log(utterance.voice);
       utterance.text = message;
       this.speech.speak(utterance);
       this.nextSpeechAllowedTime = new Date().getTime() + 5000;
