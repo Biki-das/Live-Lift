@@ -820,7 +820,7 @@ new p5((p) => {
   let talker;
   let ready = false;
   p.preload = function () {
-    p.dingSound = p.loadSound("src/assets/ding.wav");
+    p.dingSound = p.loadSound("./src/assets/ding.wav");
   };
   p.setup = function () {
     const cg = settings.geom;
